@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingtu.common.mapper.RegInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mingtu.common.entity.RegInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="reg_id" jdbcType="INTEGER" property="regId" />
+    <result column="brandName" jdbcType="VARCHAR" property="brandname" />
+    <result column="country_id" jdbcType="INTEGER" property="countryId" />
+    <result column="reg_phone" jdbcType="INTEGER" property="regPhone" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+</mapper>

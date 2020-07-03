@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingtu.common.mapper.SysInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mingtu.common.entity.SysInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="access_count" jdbcType="INTEGER" property="accessCount" />
+  </resultMap>
+</mapper>
