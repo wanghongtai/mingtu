@@ -1,7 +1,9 @@
 package com.mingtu.common.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "reg_info")
 public class RegInfo {
@@ -89,5 +91,16 @@ public class RegInfo {
      */
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    @Override
+    public String toString() {
+        return "RegInfo{" +
+                "regId=" + regId +
+                ", brandname='" + brandname + '\'' +
+                ", countryId=" + countryId +
+                ", regPhone='" + regPhone + '\'' +
+                ", createDate=" + createDate +
+                '}';
     }
 }

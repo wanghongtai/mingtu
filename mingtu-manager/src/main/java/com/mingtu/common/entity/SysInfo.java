@@ -1,6 +1,8 @@
 package com.mingtu.common.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "sys_info")
 public class SysInfo {
