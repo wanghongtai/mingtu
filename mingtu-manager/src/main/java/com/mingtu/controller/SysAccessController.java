@@ -1,8 +1,6 @@
 package com.mingtu.controller;
 
-import com.mingtu.common.entity.RegInfo;
 import com.mingtu.common.entity.SysAccess;
-import com.mingtu.common.paging.PagingResult;
 import com.mingtu.common.service.SysAccessService;
 import com.mingtu.common.utils.HttpUtil;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -23,6 +23,9 @@ public class RegInfo {
     @Column(name = "create_date")
     private Date createDate;
 
+    @Column(name = "country_name")
+    private String countryName;
+
     /**
      * @return reg_id
      */
@@ -93,14 +96,17 @@ public class RegInfo {
         this.createDate = createDate;
     }
 
-    @Override
-    public String toString() {
-        return "RegInfo{" +
-                "regId=" + regId +
-                ", brandname='" + brandname + '\'' +
-                ", countryId=" + countryId +
-                ", regPhone='" + regPhone + '\'' +
-                ", createDate=" + createDate +
-                '}';
+    /**
+     * @return country_name
+     */
+    public String getCountryName() {
+        return countryName;
+    }
+
+    /**
+     * @param countryName
+     */
+    public void setCountryName(String countryName) {
+        this.countryName = countryName == null ? null : countryName.trim();
     }
 }
