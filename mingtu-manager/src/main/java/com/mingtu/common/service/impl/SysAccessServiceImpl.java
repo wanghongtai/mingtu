@@ -56,7 +56,7 @@ public class SysAccessServiceImpl implements SysAccessService{
         Example example = new Example(SysAccess.class);
         Example.Criteria cb = example.createCriteria();
         if (item != null && !Objects.isEmpty(item.getAccessiDate())){
-            cb.andEqualTo("accessIDdate", item.getAccessiDate());
+            cb.andEqualTo("accessiDdate", item.getAccessiDate());
         }
         List<SysAccess> list = mapper.selectByExample(example);
         if (page != null) {
