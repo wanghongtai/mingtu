@@ -22,4 +22,6 @@ public class SysInfoController {
         int count = sysInfoService.count();
         return count;
     }
+
+
 }
