@@ -9,5 +9,6 @@
     <result column="accessI_date" jdbcType="TIMESTAMP" property="accessiDate" />
     <result column="access_total" jdbcType="INTEGER" property="accessTotal" />
     <result column="access_effective" jdbcType="INTEGER" property="accessEffective" />
+    <result column="access_ip" jdbcType="VARCHAR" property="accessIp" />
   </resultMap>
 </mapper>

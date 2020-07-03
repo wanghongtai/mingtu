@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mingtu.iml" filepath="$PROJECT_DIR$/mingtu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mingtu-manager/mingtu-manager.iml" filepath="$PROJECT_DIR$/mingtu-manager/mingtu-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tkmapper/tkmapper.iml" filepath="$PROJECT_DIR$/tkmapper/tkmapper.iml" />
+    </modules>
+  </component>
+</project>

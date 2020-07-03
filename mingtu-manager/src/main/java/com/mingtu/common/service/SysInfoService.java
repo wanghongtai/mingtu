@@ -5,5 +5,7 @@ package com.mingtu.common.service;
  */
 public interface SysInfoService {
 
-    public int count();
+    public int accessCount();
+
+    public int todayAccessCount();
 }

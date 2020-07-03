@@ -20,6 +20,9 @@ public class SysAccess {
     @Column(name = "access_effective")
     private Integer accessEffective;
 
+    @Column(name = "access_ip")
+    private String accessIp;
+
     /**
      * @return access_id
      */
@@ -74,5 +77,19 @@ public class SysAccess {
      */
     public void setAccessEffective(Integer accessEffective) {
         this.accessEffective = accessEffective;
+    }
+
+    /**
+     * @return access_ip
+     */
+    public String getAccessIp() {
+        return accessIp;
+    }
+
+    /**
+     * @param accessIp
+     */
+    public void setAccessIp(String accessIp) {
+        this.accessIp = accessIp == null ? null : accessIp.trim();
     }
 }

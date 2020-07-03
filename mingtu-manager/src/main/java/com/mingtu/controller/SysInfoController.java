@@ -15,13 +15,21 @@ public class SysInfoController {
 
     @Autowired
     private SysInfoService sysInfoService;
+//    @Autowired
+//    private SysInfoService sysInfoService;
 
     @ResponseBody
     @RequestMapping("/count")
-    public Object list() {
-        int count = sysInfoService.count();
+    public Object count() {
+        int count = sysInfoService.accessCount();
         return count;
     }
+
+    @RequestMapping("/todayCount")
+    public int todayCount(){
+        return sysInfoService.todayAccessCount();
+    }
+
 
 
 }
