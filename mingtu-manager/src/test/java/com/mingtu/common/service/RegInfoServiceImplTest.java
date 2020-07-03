@@ -22,4 +22,13 @@ public class RegInfoServiceImplTest {
         RegInfo regInfo = regInfoService.getById(1L);
         System.out.println(regInfo);
     }
+
+    @Test
+    public void test2(){
+        RegInfo regInfo = new RegInfo();
+        regInfo.setBrandname("aa");
+        regInfo.setCountryName("bb");
+        int count = regInfoService.save(regInfo);
+        System.out.println(count);
+    }
 }
