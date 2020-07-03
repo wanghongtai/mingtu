@@ -9,6 +9,7 @@ import com.mingtu.common.paging.LayuiPage;
 import com.mingtu.common.paging.PagingResult;
 import com.mingtu.common.service.SysAccessService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
@@ -17,6 +18,7 @@ import java.util.List;
 /**
  * Created by Hunter on 2020-07-03.
  */
+@Service
 public class SysAccessServiceImpl implements SysAccessService{
 
     @Autowired
