@@ -28,7 +28,7 @@ public class SysInfoServiceImpl implements SysInfoService {
     public int todayAccessCount() {
         Example example = new Example(SysAccess.class);
         Example.Criteria cb = example.createCriteria();
-        cb.andBetween("accessIDate", Dates.getDayBegin(), Dates.getDayBegin());
+        cb.andBetween("accessiDate", Dates.getDayBegin(), Dates.getDayBegin());
         return mapper.selectCountByExample(example);
     }
 
