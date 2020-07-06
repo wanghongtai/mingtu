@@ -1,0 +1,108 @@
+header,section,footer{
+    width: 800px;
+    margin: 0px auto;
+}
+ .head,.brand_type,.show_info,.foot,.registered {
+    width: 500px;
+    margin: 0px auto;
+}
+div img{
+    width: 100%;
+}
+.registered{
+    background-color: RGB(246,245,250);
+    border: 1px solid white;
+}
+.reg_head{
+    margin: 20px auto;
+}
+.reg_body{
+    background-color: white;
+    height: 400px;
+    width: 80%;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+.reg_body p{
+    margin: 10px 0px;
+    width: 80%;
+    height: 60px;
+    margin: 0px auto;
+    text-align: center;
+    padding: 15px 0px;
+}
+p img{
+    width: 15%;
+    margin: 0px;
+    vertical-align: middle;
+}
+.inputStyle1{
+    margin: 0px 0px 0px 0px;
+    height: 44px;
+    width: 220px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    position: relative;
+    left:-4px;
+    bottom: -2px;
+}
+.submit{
+    width: 80%;
+}
+.image_carousel{
+    width: 400px;
+    height: 120px;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+}
+@keyframes anis {
+    100% {
+        transform: translateY(-120px)
+    }
+}
+.rotate_content{
+    animation: anis 10s linear infinite;
+}
+
+
+.web_traffic{
+
+    margin: 20px 0px;
+}
+.web_traffic ul{
+    background-color: white;
+    width: 72%;
+    height: 60px;
+    margin: 0px auto;
+    border-radius: 10px;
+
+}
+.web_traffic ul li{
+    margin: 0px;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    padding: 10px 29px;
+    margin: 0px auto;
+
+}
+.web_traffic ul li:nth-of-type(1),.web_traffic ul li:nth-of-type(2){
+    border-right: 1px solid silver;
+}
+.font1{
+    font-size: 12px;
+    color: gray;
+}
+
+.left{
+    float: left;
+}
+.right {
+    float: right;
+}
+.clear:after{
+    content: "";
+    display: block;
+    clear: both;
+}

@@ -85,9 +85,9 @@ public class MD5Utils {
         return sb.toString();
     }
 
-    public static void main(String[] args) throws Exception {
-        String aaa = "123456";
-        String mac128byte = encryptMD5(aaa);
-        System.out.println("md5加密结果32 bit------------->:" + mac128byte);
-    }
+//    public static void main(String[] args) throws Exception {
+//        String aaa = "123456";
+//        String mac128byte = encryptMD5(aaa);
+//        System.out.println("md5加密结果32 bit------------->:" + mac128byte);
+//    }
 }
