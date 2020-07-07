@@ -45,9 +45,18 @@ p img{
     position: relative;
     left:-4px;
     bottom: -2px;
+    padding-left: 10px;
+    box-sizing: border-box;
 }
 .submit{
     width: 80%;
+    height: 65px;
+    background-image: url(../image/submit.jpg);
+    background-position: -3px 8px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: rgb(255,255,255);
+    border: 0;
 }
 .image_carousel{
     width: 400px;
@@ -62,9 +71,13 @@ p img{
     }
 }
 .rotate_content{
+    text-align: center;
     animation: anis 10s linear infinite;
 }
-
+.rotate_content p{
+    font-size: 12px;
+    color: gray;
+}
 
 .web_traffic{
 

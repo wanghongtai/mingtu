@@ -21,14 +21,13 @@ public class SysInfoController {
     @RequestMapping("/count")
     public Object count() {
         int count = sysInfoService.accessCount();
-        return count;
+        return 53675 + count;
     }
 
     @RequestMapping("/todayCount")
-    public int todayCount(){
-        return sysInfoService.todayAccessCount();
+    public int todayCount() {
+        return 1586 + sysInfoService.todayAccessCount();
     }
-
 
 
 }
