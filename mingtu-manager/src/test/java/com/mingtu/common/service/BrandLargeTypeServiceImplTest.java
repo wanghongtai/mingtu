@@ -2,6 +2,7 @@ package com.mingtu.common.service;
 
 import com.mingtu.common.entity.BrandLargeType;
 import com.mingtu.common.entity.RecordStatus;
+import com.mingtu.common.entity.vo.BrandLargeTypeVo;
 import com.mingtu.common.paging.LayuiPage;
 import com.mingtu.common.paging.PagingResult;
 import org.junit.Test;
@@ -23,14 +24,13 @@ public class BrandLargeTypeServiceImplTest {
     private BrandLargeTypeService brandLargeTypeService;
 
 
-
     @Test
     public void test() throws Exception {
         BrandLargeType brandLargeType = new BrandLargeType();
         List<BrandLargeType> brandLargeTypeList = brandLargeTypeService.findBrandLargeTypeList(brandLargeType);
 
-        System.out.println("总条数："+brandLargeTypeList.size());
-        for(BrandLargeType item:brandLargeTypeList){
+        System.out.println("总条数：" + brandLargeTypeList.size());
+        for (BrandLargeType item : brandLargeTypeList) {
             System.out.println(item);
         }
     }
@@ -85,11 +85,23 @@ public class BrandLargeTypeServiceImplTest {
         PagingResult<BrandLargeType> pageResult
                 = brandLargeTypeService.findBrandLargeType(brandLargeType, page);
 
-        System.out.println("总条数："+pageResult.getTotalCount());
-        for(BrandLargeType item:pageResult.getResult()){
+        System.out.println("总条数：" + pageResult.getTotalCount());
+        for (BrandLargeType item : pageResult.getResult()) {
             System.out.println(item);
         }
     }
 
-    
+    @Test
+    public void findBrandLargeTypeVo() {
+        BrandLargeTypeVo vo = new BrandLargeTypeVo();
+        LayuiPage page = new LayuiPage();
+
+        List<BrandLargeTypeVo> list
+                = brandLargeTypeService.findBrandLargeTypeVo(vo);
+
+        System.out.println("总条数：" + list.size());
+        for (BrandLargeTypeVo item : list) {
+            System.out.println(item);
+        }
+    }
 }

@@ -1,6 +1,8 @@
 package com.mingtu.controller.brand;
 
 import com.mingtu.common.entity.BrandLargeType;
+import com.mingtu.common.entity.vo.BrandLargeTypeVo;
+import com.mingtu.common.paging.PagingResult;
 import com.mingtu.common.service.BrandLargeTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +21,18 @@ public class BrandLargeTypeAction {
 	 * 获取商标大类列表
 	 * @return
 	 */
-	@RequestMapping("/findBrandLargeTypeList")
-	public List<BrandLargeType> findBrandLargeTypeList(BrandLargeType type){
+	@RequestMapping("/list")
+	public List<BrandLargeType> list(BrandLargeType type){
 		return brandLargeTypeService.findBrandLargeTypeList(type);
+	}
+
+	/**
+	 * 获取商标大类列表
+	 * @return
+	 */
+	@RequestMapping("/listWithSmall")
+	public List<BrandLargeTypeVo> listWithSmall(BrandLargeTypeVo type){
+		return brandLargeTypeService.findBrandLargeTypeVo(type);
 	}
 
 }

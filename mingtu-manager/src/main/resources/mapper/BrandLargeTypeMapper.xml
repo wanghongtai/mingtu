@@ -1,22 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mingtu.common.mapper.BrandLargeTypeMapper">
-  <resultMap id="BaseResultMap" type="com.mingtu.common.entity.BrandLargeType">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="catalog" jdbcType="VARCHAR" property="catalog" />
-    <result column="cnno" jdbcType="VARCHAR" property="cnno" />
-    <result column="no" jdbcType="VARCHAR" property="no" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="instruction" jdbcType="VARCHAR" property="instruction" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="record_status" jdbcType="CHAR" property="recordStatus" />
-    <result column="update_count" jdbcType="INTEGER" property="updateCount" />
-    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
-    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
-    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
-    <result column="updater_id" jdbcType="BIGINT" property="updaterId" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.mingtu.common.entity.BrandLargeType">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="catalog" jdbcType="VARCHAR" property="catalog"/>
+        <result column="cnno" jdbcType="VARCHAR" property="cnno"/>
+        <result column="no" jdbcType="VARCHAR" property="no"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="instruction" jdbcType="VARCHAR" property="instruction"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="record_status" jdbcType="CHAR" property="recordStatus"/>
+        <result column="update_count" jdbcType="INTEGER" property="updateCount"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="creator_id" jdbcType="BIGINT" property="creatorId"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="updater_id" jdbcType="BIGINT" property="updaterId"/>
+    </resultMap>
+
+
+    <resultMap id="BrandLargeTypeVoMap" type="com.mingtu.common.entity.vo.BrandLargeTypeVo">
+        <id column="A_id" jdbcType="BIGINT" property="id"/>
+        <result column="A_catalog" jdbcType="VARCHAR" property="catalog"/>
+        <result column="A_cnno" jdbcType="VARCHAR" property="cnno"/>
+        <result column="A_no" jdbcType="VARCHAR" property="no"/>
+        <result column="A_name" jdbcType="VARCHAR" property="name"/>
+        <result column="A_instruction" jdbcType="VARCHAR" property="instruction"/>
+        <result column="A_remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="A_record_status" jdbcType="CHAR" property="recordStatus"/>
+        <result column="A_update_count" jdbcType="INTEGER" property="updateCount"/>
+        <result column="A_create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="A_creator_id" jdbcType="BIGINT" property="creatorId"/>
+        <result column="A_update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="A_updater_id" jdbcType="BIGINT" property="updaterId"/>
+        <collection property="brandSmallTypeList" ofType="BrandSmallType">
+            <id column="B_id" jdbcType="BIGINT" property="id" />
+            <result column="B_large_type_id" jdbcType="BIGINT" property="largeTypeId" />
+            <result column="B_no" jdbcType="VARCHAR" property="no" />
+            <result column="B_name" jdbcType="VARCHAR" property="name" />
+            <result column="B_record_status" jdbcType="CHAR" property="recordStatus" />
+            <!--<result column="B_update_count" jdbcType="INTEGER" property="updateCount" />-->
+            <result column="B_create_date" jdbcType="TIMESTAMP" property="createDate" />
+            <!--<result column="B_creator_id" jdbcType="BIGINT" property="creatorId" />-->
+            <!--<result column="B_update_date" jdbcType="TIMESTAMP" property="updateDate" />-->
+            <!--<result column="B_updater_id" jdbcType="BIGINT" property="updaterId" />-->
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List_A">
+        A.id as A_id, A.catalog as A_catalog, A.cnno A_cnno, A.no A_no, A.name A_name,A.instruction A_instruction,
+        A.remark A_remark, A.record_status A_record_status,
+        A.update_count A_update_count,A.create_date A_create_date, A.creator_id A_creator_id,
+        A.update_date A_update_date,A.updater_id A_updater_id
+    </sql>
+    <sql id="Base_Column_List_B">
+        B.id B_id,B.large_type_id B_large_type_id,B.no B_no,B.name B_name,B.record_status B_record_status,
+        B.update_count B_update_count,B.create_date B_create_date,B.creator_id B_creator_id,
+        B.update_date B_update_date,B.updater_id B_updater_id
+    </sql>
+
+    <!--获取大类，包含子类列表-->
+    <select id="findBrandLargeTypeVo" resultMap="BrandLargeTypeVoMap">
+        SELECT
+          <include refid="Base_Column_List_A"/>,<include refid="Base_Column_List_B"/>
+        FROM brand_large_type A
+          inner join brand_small_type B
+          on A.id=B.large_type_id
+        <where>
+            <if test="recordStatus !=null and recordStatus!=''">
+                A.record_status=#{recordStatus}
+            </if>
+            <if test="filter !=null and filter!=''">
+                and (A.cnno like "%"#{filter}"%" or A.name like "%"#{filter}"%" or A.instruction like "%"#{filter}"%" )
+            </if>
+            <!--<if test="startCat != null and endCat != null">
+                and A.id in(#{startCat}, #{endCat})
+            </if>-->
+        </where>
+    </select>
 </mapper>

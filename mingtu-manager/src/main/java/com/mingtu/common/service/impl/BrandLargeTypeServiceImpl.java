@@ -3,6 +3,7 @@ package com.mingtu.common.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.mingtu.common.entity.BrandLargeType;
 import com.mingtu.common.entity.RecordStatus;
+import com.mingtu.common.entity.vo.BrandLargeTypeVo;
 import com.mingtu.common.lang.Objects;
 import com.mingtu.common.mapper.BrandLargeTypeMapper;
 import com.mingtu.common.paging.LayuiPage;
@@ -23,16 +24,16 @@ public class BrandLargeTypeServiceImpl implements BrandLargeTypeService {
 
     @Override
     public BrandLargeType getBrandLargeType(Long id) {
-        
+
         return mapper.selectByPrimaryKey(id);
     }
 
     @Override
     public int saveBrandLargeType(BrandLargeType brandLargeType) {
         int count = 0;
-        if(!Objects.isEmpty(brandLargeType.getId())){
+        if (!Objects.isEmpty(brandLargeType.getId())) {
             count = mapper.updateByPrimaryKeySelective(brandLargeType);
-        }else{
+        } else {
             //insert方法是使用所有的属性作为字段使用,如INSERT INTO tb_user (AGE,USER_NAME,ID,NAME,BIRTHDAY,SEX,PASSWORD,UPDATED,CREATED) VALUES ( ?,?,?,?,?,?,?,?,? )，Parameters: null, null, null, sansan(String), null, null, null, null, null
             //insertSelective插入数据，使用不为null的属性作为字段使用，如 INSERT INTO tb_user ( ID,NAME ) VALUES ( ?,? )，Parameters: null, test_insertSelective(String)
             //TODO: 默认值
@@ -54,7 +55,7 @@ public class BrandLargeTypeServiceImpl implements BrandLargeTypeService {
         Example example = new Example(BrandLargeType.class);
         Example.Criteria cb = example.createCriteria();
 
-        if(type != null && !Objects.isEmpty(type.getName())) {
+        if (type != null && !Objects.isEmpty(type.getName())) {
             cb.andEqualTo("name", type.getName().trim());
         }
         cb.andEqualTo("recordStatus", RecordStatus.ACTIVE);
@@ -76,7 +77,7 @@ public class BrandLargeTypeServiceImpl implements BrandLargeTypeService {
         Example example = new Example(BrandLargeType.class);
         Example.Criteria cb = example.createCriteria();
 
-        if(type != null && !Objects.isEmpty(type.getName())) {
+        if (type != null && !Objects.isEmpty(type.getName())) {
             cb.andEqualTo("name", type.getName().trim());
         }
         cb.andEqualTo("recordStatus", RecordStatus.ACTIVE);
@@ -86,5 +87,18 @@ public class BrandLargeTypeServiceImpl implements BrandLargeTypeService {
 
 
         return brandLargeTypeList;
+    }
+
+    @Override
+    public List<BrandLargeTypeVo> findBrandLargeTypeVo(BrandLargeTypeVo vo) {
+
+        /*Integer startCat = null;
+        Integer endCat = null;
+        if (page != null) {
+            startCat = (page.getPage() - 1) * page.getLimit();
+            endCat = page.getLimit();
+        }*/
+        List<BrandLargeTypeVo> list = mapper.findBrandLargeTypeVo(vo);
+        return list;
     }
 }
