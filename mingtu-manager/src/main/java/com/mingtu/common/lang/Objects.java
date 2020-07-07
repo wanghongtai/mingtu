@@ -11,42 +11,38 @@ import java.util.Map;
 /**
  * Created by Hunter on 2020-06-23.
  */
-public class Objects extends ObjectUtils
-{
-    public static String toString(Object object, ToStringStyle style)
-    {
+public class Objects extends ObjectUtils {
+    public static String toString(Object object, ToStringStyle style) {
         return ReflectionToStringBuilder.toString(object, style);
     }
 
-    public static boolean isEmpty(Object o)
-    {
+    public static boolean isEmpty(Object o) {
         if (o == null) {
             return true;
         }
         if (isCharSequence(o)) {
-            return Strings.isEmpty((CharSequence)o);
+            return Strings.isEmpty((CharSequence) o);
+        }
+        if (isCollection(o)) {
+            return ((Collection) o).size() > 0;
         }
         return false;
     }
 
-    public static boolean isArray(Object o)
-    {
+    public static boolean isArray(Object o) {
         Class<?> t = o.getClass();
         return t.isArray();
     }
 
-    public static boolean isMap(Object o)
-    {
+    public static boolean isMap(Object o) {
         return o instanceof Map;
     }
 
-    public static boolean isCollection(Object o)
-    {
+    public static boolean isCollection(Object o) {
         return o instanceof Collection;
     }
 
-    public static boolean isCharSequence(Object o)
-    {
+    public static boolean isCharSequence(Object o) {
         return o instanceof CharSequence;
     }
 }

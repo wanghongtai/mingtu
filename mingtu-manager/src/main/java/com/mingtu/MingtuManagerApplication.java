@@ -14,7 +14,7 @@ public class MingtuManagerApplication extends SpringBootServletInitializer {
 		SpringApplication.run(MingtuManagerApplication.class, args);
 	}
 
-	@Override
+//	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(MingtuManagerApplication.class);
 	}
