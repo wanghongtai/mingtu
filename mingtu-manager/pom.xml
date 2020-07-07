@@ -21,6 +21,8 @@
 		<tk.mybatis.version>1.2.4</tk.mybatis.version>
 		<pagehelper.version>5.1.2</pagehelper.version>
 		<commons-lang3.version>3.9</commons-lang3.version>
+		<javax.servlet-api>3.1.0</javax.servlet-api>
+		<mybatis-spring-boot.version>2.1.3</mybatis-spring-boot.version>
 	</properties>
 
 	<dependencies>
@@ -31,14 +33,8 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<!--打包去掉该依赖 处理开始-->
-			<!--<exclusions>-->
-				<!--<exclusion>-->
-					<!--<groupId>org.springframework.boot</groupId>-->
-					<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-				<!--</exclusion>-->
-			<!--</exclusions>-->
 		</dependency>
+		<!--打war包去掉tomcat依赖 处理开始-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -47,15 +43,15 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<version>${javax.servlet-api}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!--打包去掉该依赖 处理结束-->
+		<!--打war包去掉tomcat依赖 处理结束-->
 
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.3</version>
+			<version>${mybatis-spring-boot.version}</version>
 		</dependency>
 
 		<!--Mysql驱动-->
