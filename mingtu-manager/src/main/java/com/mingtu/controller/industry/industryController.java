@@ -1,7 +1,5 @@
 package com.mingtu.controller.industry;
 
-import com.mingtu.common.entity.BrandLargeType;
-import com.mingtu.common.entity.IndusInfo;
 import com.mingtu.common.entity.vo.IndusInfoVo;
 import com.mingtu.common.service.IndusInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
