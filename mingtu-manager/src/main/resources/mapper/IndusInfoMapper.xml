@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingtu.common.mapper.IndusInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mingtu.common.entity.IndusInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+
+  <resultMap id="IndusInfoVoMap" type="com.mingtu.common.entity.vo.IndusInfoVo">
+    <id column="A_id" jdbcType="BIGINT" property="id" />
+    <result column="A_name" jdbcType="VARCHAR" property="name" />
+    <result column="A_create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <collection property="coreCateList" ofType="com.mingtu.common.entity.BrandLargeType">
+      <id column="D_id" jdbcType="BIGINT" property="id" />
+      <result column="D_cnno" jdbcType="VARCHAR" property="cnno" />
+      <result column="D_name" jdbcType="VARCHAR" property="name" />
+    </collection>
+  </resultMap>
+  <resultMap id="IndusInfoVoMap2" type="com.mingtu.common.entity.vo.IndusInfoVo">
+    <id column="A_id" jdbcType="BIGINT" property="id" />
+    <result column="A_name" jdbcType="VARCHAR" property="name" />
+    <result column="A_create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <collection property="relateCateList" ofType="com.mingtu.common.entity.BrandLargeType">
+      <id column="D_id" jdbcType="BIGINT" property="id" />
+      <result column="D_cnno" jdbcType="VARCHAR" property="cnno" />
+      <result column="D_name" jdbcType="VARCHAR" property="name" />
+    </collection>
+  </resultMap>
+  <!--获取行业信息，包含核心分类和关联分类-->
+  <select id="findByItemWithCoreCateList" resultMap="IndusInfoVoMap">
+    SELECT A.id A_id, A.name A_name, A.create_date A_create_date, D.id D_id, D.cnno D_cnno, D.name D_name
+        FROM indus_info A
+        LEFT JOIN indus_brand_core B ON A.id = B.indus_info_id
+        INNER JOIN brand_large_type D  ON B.brand_large_type_id=D.id
+  </select>
+
+  <!--获取行业信息，包含核心分类和关联分类-->
+  <select id="findByItemWithRelateCateList" resultMap="IndusInfoVoMap2">
+    SELECT A.id A_id, A.name A_name, A.create_date A_create_date, D.id D_id, D.cnno D_cnno, D.name D_name
+    FROM indus_info A
+    LEFT JOIN indus_brand_relate C ON A.id = C.indus_info_id
+    INNER JOIN brand_large_type D  ON C .brand_large_type_id=D.id
+  </select>
+
+</mapper>

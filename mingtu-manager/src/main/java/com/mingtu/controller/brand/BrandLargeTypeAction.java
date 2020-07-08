@@ -13,10 +13,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/brandLargeType")
 public class BrandLargeTypeAction {
-	
+
 	@Autowired
 	private BrandLargeTypeService brandLargeTypeService;
-	
+
 	/**
 	 * 获取商标大类列表
 	 * @return

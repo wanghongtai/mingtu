@@ -57,6 +57,7 @@
         <table tableName="reg_%"></table>
         <table tableName="sys_%"></table>
         <table tableName="brand_%"></table>
+        <table tableName="indus_%"></table>
 
     </context>
 </generatorConfiguration>
