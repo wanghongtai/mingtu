@@ -8,6 +8,9 @@ public class IndusInfo {
     @Id
     private Long id;
 
+    /**
+     * 行业名字不重复
+     */
     private String name;
 
     @Column(name = "create_date")
@@ -28,14 +31,18 @@ public class IndusInfo {
     }
 
     /**
-     * @return name
+     * 获取行业名字不重复
+     *
+     * @return name - 行业名字不重复
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param name
+     * 设置行业名字不重复
+     *
+     * @param name 行业名字不重复
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();

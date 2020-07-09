@@ -35,17 +35,17 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!--打war包去掉tomcat依赖 处理开始-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-			<!--<scope>provided</scope>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>javax.servlet</groupId>-->
-			<!--<artifactId>javax.servlet-api</artifactId>-->
-			<!--<version>${javax.servlet-api}</version>-->
-			<!--<scope>provided</scope>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
 		<!--打war包去掉tomcat依赖 处理结束-->
 
 		<dependency>

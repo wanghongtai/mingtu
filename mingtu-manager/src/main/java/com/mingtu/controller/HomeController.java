@@ -17,10 +17,10 @@ public class HomeController {
      * 默认跳转到index.html
      * @return
      */
-    @RequestMapping("/")
-    public String index(){
-        return "index.html";
-    }
+//    @RequestMapping("/")
+//    public String index(){
+//        return "index.html";
+//    }
 
     @ResponseBody
     @RequestMapping("/hello")

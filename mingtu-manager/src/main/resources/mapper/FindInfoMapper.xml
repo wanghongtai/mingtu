@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingtu.common.mapper.FindInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mingtu.common.entity.FindInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="find_id" jdbcType="INTEGER" property="findId" />
+    <result column="find_brand_name" jdbcType="VARCHAR" property="findBrandName" />
+    <result column="find_conuntry_name" jdbcType="VARCHAR" property="findConuntryName" />
+    <result column="find_phone" jdbcType="VARCHAR" property="findPhone" />
+    <result column="find_create_date" jdbcType="TIMESTAMP" property="findCreateDate" />
+  </resultMap>
+</mapper>
