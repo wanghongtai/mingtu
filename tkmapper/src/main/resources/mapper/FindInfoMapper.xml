@@ -10,5 +10,6 @@
     <result column="find_conuntry_name" jdbcType="VARCHAR" property="findConuntryName" />
     <result column="find_phone" jdbcType="VARCHAR" property="findPhone" />
     <result column="find_create_date" jdbcType="TIMESTAMP" property="findCreateDate" />
+    <result column="find_refer" jdbcType="VARCHAR" property="findRefer" />
   </resultMap>
 </mapper>

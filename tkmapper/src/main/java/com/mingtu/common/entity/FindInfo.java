@@ -21,6 +21,9 @@ public class FindInfo {
     @Column(name = "find_create_date")
     private Date findCreateDate;
 
+    @Column(name = "find_refer")
+    private String findRefer;
+
     /**
      * @return find_id
      */
@@ -89,5 +92,19 @@ public class FindInfo {
      */
     public void setFindCreateDate(Date findCreateDate) {
         this.findCreateDate = findCreateDate;
+    }
+
+    /**
+     * @return find_refer
+     */
+    public String getFindRefer() {
+        return findRefer;
+    }
+
+    /**
+     * @param findRefer
+     */
+    public void setFindRefer(String findRefer) {
+        this.findRefer = findRefer == null ? null : findRefer.trim();
     }
 }

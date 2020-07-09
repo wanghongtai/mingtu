@@ -11,5 +11,6 @@
     <result column="reg_phone" jdbcType="VARCHAR" property="regPhone" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="country_name" jdbcType="VARCHAR" property="countryName" />
+    <result column="refer" jdbcType="VARCHAR" property="refer" />
   </resultMap>
 </mapper>

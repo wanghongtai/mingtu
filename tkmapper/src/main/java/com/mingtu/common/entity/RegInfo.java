@@ -24,6 +24,8 @@ public class RegInfo {
     @Column(name = "country_name")
     private String countryName;
 
+    private String refer;
+
     /**
      * @return reg_id
      */
@@ -106,5 +108,19 @@ public class RegInfo {
      */
     public void setCountryName(String countryName) {
         this.countryName = countryName == null ? null : countryName.trim();
+    }
+
+    /**
+     * @return refer
+     */
+    public String getRefer() {
+        return refer;
+    }
+
+    /**
+     * @param refer
+     */
+    public void setRefer(String refer) {
+        this.refer = refer == null ? null : refer.trim();
     }
 }
