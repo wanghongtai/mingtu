@@ -59,6 +59,7 @@
         <table tableName="brand_%"></table>
         <table tableName="indus_%"></table>
         <table tableName="find_%"></table>
+        <table tableName="user_%"></table>
 
     </context>
 </generatorConfiguration>
